@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Edit Product</title>
+
+<style>
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+
+        background: #f5f7fb;
+        color: #172033;
+        min-height: 100vh;
+    }
+
+    main {
+        width: min(920px, calc(100% - 32px));
+        margin: 40px auto 70px;
+    }
+
+    .page-header {
+        margin-bottom: 24px;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 14px;
+        color: #64748b;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .back-link:hover {
+        color: #111827;
+    }
+
+    .page-header h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        font-weight: 750;
+        color: #111827;
+        margin-bottom: 7px;
+    }
+
+    .page-header p {
+        color: #64748b;
+        font-size: 15px;
+    }
+
+    .edit-card {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        box-shadow:
+            0 8px 30px rgba(15, 23, 42, 0.06);
+        overflow: hidden;
+    }
+
+    .card-header {
+        padding: 22px 26px;
+        border-bottom: 1px solid #edf0f4;
+    }
+
+    .card-header h2 {
+        font-size: 18px;
+        color: #111827;
+        margin-bottom: 5px;
+    }
+
+    .card-header p {
+        color: #64748b;
+        font-size: 13px;
+    }
+
+    form {
+        padding: 28px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-group.full {
+        grid-column: 1 / -1;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 650;
+        color: #334155;
+    }
+
+    .required {
+        color: #dc2626;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        border: 1px solid #d8dee8;
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 12px 13px;
+        font: inherit;
+        font-size: 14px;
+        color: #172033;
+        outline: none;
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    input,
+    select {
+        height: 46px;
+    }
+
+    textarea {
+        min-height: 125px;
+        resize: vertical;
+        line-height: 1.55;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+        border-color: #6366f1;
+        box-shadow:
+            0 0 0 3px rgba(99, 102, 241, 0.10);
+    }
+
+    input[type="file"] {
+        height: auto;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    .field-help {
+        color: #94a3b8;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .image-section {
+        margin-top: 28px;
+        padding-top: 25px;
+        border-top: 1px solid #edf0f4;
+    }
+
+    .image-section-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 16px;
+    }
+
+    .image-preview-box {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        background: #fafbfc;
+        margin-bottom: 18px;
+    }
+
+    .current-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        background: #f1f5f9;
+    }
+
+    .image-info {
+        flex: 1;
+    }
+
+    .image-info strong {
+        display: block;
+        font-size: 14px;
+        color: #334155;
+        margin-bottom: 5px;
+    }
+
+    .image-info span {
+        color: #94a3b8;
+        font-size: 12px;
+    }
+
+    #noCurrentImage {
+        color: #94a3b8;
+        font-size: 13px;
+    }
+
+    .new-image {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 30px;
+        padding-top: 24px;
+        border-top: 1px solid #edf0f4;
+    }
+
+    button {
+        border: 0;
+        border-radius: 10px;
+        height: 45px;
+        padding: 0 22px;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 650;
+        cursor: pointer;
+        transition:
+            transform 0.15s ease,
+            box-shadow 0.2s ease,
+            opacity 0.2s ease;
+    }
+
+    button:hover {
+        transform: translateY(-1px);
+    }
+
+    #saveProductButton {
+        background: #111827;
+        color: #ffffff;
+        box-shadow:
+            0 5px 14px rgba(15, 23, 42, 0.14);
+    }
+
+    #saveProductButton:hover {
+        box-shadow:
+            0 8px 18px rgba(15, 23, 42, 0.18);
+    }
+
+    #cancelButton {
+        background: #f1f5f9;
+        color: #475569;
+    }
+
+    #cancelButton:hover {
+        background: #e2e8f0;
+    }
+
+    #productMessage {
+        display: none;
+        margin-bottom: 20px;
+        padding: 13px 15px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 550;
+    }
+
+    #productMessage.error {
+        display: block;
+        color: #991b1b;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+    }
+
+    #productMessage.success {
+        display: block;
+        color: #166534;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+    }
+
+    #productMessage.loading {
+        display: block;
+        color: #475569;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+    }
+
+    button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    @media (max-width: 700px) {
+
+        main {
+            width: min(100% - 20px, 920px);
+            margin-top: 22px;
+        }
+
+        .page-header h1 {
+            font-size: 25px;
+        }
+
+        .form-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .form-group.full {
+            grid-column: auto;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        .card-header {
+            padding: 20px;
+        }
+
+        .image-preview-box {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .form-actions button {
+            width: 100%;
+        }
+
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<main>
+
+    <div class="page-header">
+
+        <a
+            href="./products.html"
+            class="back-link"
+        >
+            ← Back to Products
+        </a>
+
+        <h1>Edit Product</h1>
+
+        <p>
+            Update your product information and save your changes.
+        </p>
+
+    </div>
+
+
+    <div id="productMessage"></div>
+
+
+    <section class="edit-card">
+
+        <div class="card-header">
+
+            <h2>Product Information</h2>
+
+            <p>
+                Update the details below.
+            </p>
+
+        </div>
+
+
+        <form
+            id="editProductForm"
+            enctype="multipart/form-data"
+        >
+
+            <div class="form-grid">
+
+
+                <div class="form-group full">
+
+                    <label for="productName">
+                        Product Name
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        name="name"
+                        placeholder="Enter product name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        name="description"
+                        placeholder="Describe your product..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productPrice">
+                        Price (₦)
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        name="price"
+                        min="1"
+                        step="0.01"
+                        placeholder="0.00"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productCategory"
+                        name="category"
+                        placeholder="e.g. Electronics"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productStock">
+                        Stock Quantity
+                        <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productStock"
+                        name="stock"
+                        min="0"
+                        step="1"
+                        placeholder="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="productStatus">
+                        Status
+                    </label>
+
+                    <select
+                        id="productStatus"
+                        name="status"
+                    >
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="image-section">
+
+                <div class="image-section-title">
+                    Product Image
+                </div>
+
+
+                <div class="image-preview-box">
+
+                    <img
+                        id="currentProductImage"
+                        class="current-image"
+                        src=""
+                        alt="Current product image"
+                        style="display: none;"
+                    >
+
+
+                    <div class="image-info">
+
+                        <strong>
+                            Current Product Image
+                        </strong>
+
+                        <span>
+                            This is the image currently used for this product.
+                        </span>
+
+                        <p id="noCurrentImage">
+                            No image available
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="new-image">
+
+                    <label for="productImage">
+                        Replace Image
+                    </label>
+
+                    <input
+                        type="file"
+                        id="productImage"
+                        name="image"
+                        accept="image/*"
+                    >
+
+                    <small class="field-help">
+                        Leave this empty if you want to keep the current image.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    id="saveProductButton"
+                >
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<script src="./edit-product.js"></script>
+
+
+</body>
+
+</html>

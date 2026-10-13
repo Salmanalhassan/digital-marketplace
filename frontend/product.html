@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Product | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="./product.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header class="marketplace-header">
+
+        <div class="header-container">
+
+            <a
+                href="./index.html"
+                class="brand"
+            >
+
+                <div class="brand-icon">
+                    DM
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        Digital
+                    </strong>
+
+                    <span>
+                        Marketplace
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <nav class="main-navigation">
+
+                <a href="./index.html">
+                    Marketplace
+                </a>
+
+                <a href="./index.html#shops">
+                    Shops
+                </a>
+
+                <a
+                    href="./cart.html"
+                    class="cart-link"
+                >
+
+                    🛒
+
+                    <span>
+                        Cart
+                    </span>
+
+                    <span
+                        id="cartCount"
+                        class="cart-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main class="product-page">
+
+
+        <!-- ========================================
+             MESSAGE
+        ======================================== -->
+
+        <div
+            id="productMessage"
+            class="product-message"
+        ></div>
+
+
+
+        <!-- ========================================
+             BACK LINK
+        ======================================== -->
+
+        <div class="page-container">
+
+            <a
+                href="javascript:history.back()"
+                class="back-link"
+            >
+                ← Back
+            </a>
+
+        </div>
+
+
+
+        <!-- ========================================
+             PRODUCT DETAILS
+        ======================================== -->
+
+        <section
+            id="productDetails"
+            class="product-details"
+        >
+
+            <!-- Loading state -->
+
+            <div class="product-loading">
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading product...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             RELATED / SHOP LINK
+        ======================================== -->
+
+        <section
+            id="shopSection"
+            class="shop-section"
+            style="display: none;"
+        >
+
+            <div class="page-container">
+
+                <div class="shop-section-card">
+
+                    <div
+                        id="shopLogo"
+                        class="shop-logo"
+                    >
+                        🏪
+                    </div>
+
+
+                    <div class="shop-section-info">
+
+                        <span>
+                            Sold by
+                        </span>
+
+                        <h2 id="shopName">
+                            Shop
+                        </h2>
+
+                        <p id="shopDescription">
+                            Visit this shop to see more products.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        id="viewShopButton"
+                        href="#"
+                        class="view-shop-button"
+                    >
+                        View Shop
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+<script src="./js/cart.js"></script>
+<script src="./product.js"></script>
+    
+
+</body>
+
+</html>
+

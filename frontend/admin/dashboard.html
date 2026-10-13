@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="./dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         ADMIN LAYOUT
+    ========================================= -->
+
+    <div class="admin-layout">
+
+
+        <!-- ========================================
+             SIDEBAR
+        ========================================= -->
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div class="admin-sidebar-header">
+
+                <div class="admin-logo">
+                    Digital Marketplace
+                </div>
+
+                <div class="admin-role">
+                    Administrator
+                </div>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="admin-navigation">
+
+                <a
+                    href="./dashboard.html"
+                    class="admin-nav-link active"
+                >
+
+                    <span class="admin-nav-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="vendors.html"
+                    class="admin-nav-link"
+                >
+
+                    <span class="admin-nav-icon">
+                        👤
+                    </span>
+
+                    <span>
+                        Vendors
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="shops.html"
+                    class="admin-nav-link"
+                >
+
+                    <span class="admin-nav-icon">
+                        🏪
+                    </span>
+
+                    <span>
+                        Shops
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="products.html"
+                    class="admin-nav-link"
+                >
+
+                    <span class="admin-nav-icon">
+                        📦
+                    </span>
+
+                    <span>
+                        Products
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="orders.html"
+                    class="admin-nav-link"
+                >
+
+                    <span class="admin-nav-icon">
+                        🛒
+                    </span>
+
+                    <span>
+                        Orders
+                    </span>
+
+                </a>
+
+
+<a
+    href="../index.html"
+    class="admin-nav-link"
+>
+    <span class="admin-nav-icon">
+        🛍️
+    </span>
+
+    <span>
+        View Marketplace
+    </span>
+</a>
+
+                <a
+                    href="settings.html"
+                    class="admin-nav-link"
+                >
+
+                    <span class="admin-nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR FOOTER -->
+
+            <div class="admin-sidebar-footer">
+
+                <button
+                    type="button"
+                    id="adminLogoutButton"
+                    class="admin-logout-button"
+                >
+
+                    <span>
+                        ⇥
+                    </span>
+
+                    Logout
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ========================================
+             MAIN AREA
+        ========================================= -->
+
+        <main class="admin-main">
+
+
+            <!-- ========================================
+                 TOP BAR
+            ========================================= -->
+
+            <header class="admin-topbar">
+
+                <button
+                    type="button"
+                    id="adminSidebarToggle"
+                    class="admin-sidebar-toggle"
+                    aria-label="Toggle sidebar"
+                >
+
+                    ☰
+
+                </button>
+
+
+                <div class="admin-topbar-title">
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                    <p>
+                        Manage your Digital Marketplace
+                    </p>
+
+                </div>
+
+
+                <div class="admin-profile">
+
+                    <div
+                        class="admin-profile-avatar"
+                        id="adminProfileAvatar"
+                    >
+                        A
+                    </div>
+
+
+                    <div class="admin-profile-info">
+
+                        <strong
+                            id="adminProfileName"
+                        >
+                            Admin
+                        </strong>
+
+                        <small
+                            id="adminProfileEmail"
+                        >
+                            admin@digitalmarketplace.com
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ========================================
+                 CONTENT
+            ========================================= -->
+
+            <section class="admin-content">
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="adminDashboardMessage"
+                    class="admin-dashboard-message"
+                ></div>
+
+
+                <!-- WELCOME -->
+
+                <div class="admin-welcome">
+
+                    <div>
+
+                        <h2>
+                            Welcome back,
+                            <span id="welcomeAdminName">
+                                Admin
+                            </span>
+                        </h2>
+
+                        <p>
+                            Here's an overview of your marketplace.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================
+                     STATISTICS
+                ========================================= -->
+
+                <div class="admin-stats-grid">
+
+
+                    <!-- VENDORS -->
+
+                    <div class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+                            👤
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Total Vendors
+                            </span>
+
+                            <strong
+                                id="totalVendors"
+                            >
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SHOPS -->
+
+                    <div class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+                            🏪
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Total Shops
+                            </span>
+
+                            <strong
+                                id="totalShops"
+                            >
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRODUCTS -->
+
+                    <div class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+                            📦
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Total Products
+                            </span>
+
+                            <strong
+                                id="totalProducts"
+                            >
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ORDERS -->
+
+                    <div class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+                            🛒
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <span>
+                                Total Orders
+                            </span>
+
+                            <strong
+                                id="totalOrders"
+                            >
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ========================================
+                     DASHBOARD SECTIONS
+                ========================================= -->
+
+                <div class="admin-dashboard-grid">
+
+
+                    <!-- RECENT ORDERS -->
+
+                    <section class="admin-dashboard-card">
+
+                        <div class="admin-card-header">
+
+                            <div>
+
+                                <h3>
+                                    Recent Orders
+                                </h3>
+
+                                <p>
+                                    Latest customer orders
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="admin-table-wrapper"
+                        >
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            Order
+                                        </th>
+
+                                        <th>
+                                            Customer
+                                        </th>
+
+                                        <th>
+                                            Total
+                                        </th>
+
+                                        <th>
+                                            Status
+                                        </th>
+
+                                        <th>
+                                            Date
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody
+                                    id="recentOrdersTableBody"
+                                >
+
+                                    <tr>
+
+                                        <td
+                                            colspan="5"
+                                            class="admin-table-loading"
+                                        >
+                                            Loading...
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- QUICK OVERVIEW -->
+
+                    <section class="admin-dashboard-card">
+
+                        <div class="admin-card-header">
+
+                            <div>
+
+                                <h3>
+                                    Marketplace Overview
+                                </h3>
+
+                                <p>
+                                    Current marketplace status
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-overview-list">
+
+
+                            <div class="admin-overview-item">
+
+                                <span>
+                                    Pending Orders
+                                </span>
+
+                                <strong
+                                    id="pendingOrders"
+                                >
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="admin-overview-item">
+
+                                <span>
+                                    Processing Orders
+                                </span>
+
+                                <strong
+                                    id="processingOrders"
+                                >
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="admin-overview-item">
+
+                                <span>
+                                    Completed Orders
+                                </span>
+
+                                <strong
+                                    id="completedOrders"
+                                >
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="admin-overview-item">
+
+                                <span>
+                                    Cancelled Orders
+                                </span>
+
+                                <strong
+                                    id="cancelledOrders"
+                                >
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </section>
+
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script
+        src="./dashboard.js"
+    ></script>
+
+</body>
+
+</html>
+

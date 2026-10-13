@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Vendor Dashboard | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/vendor.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="vendor-sidebar">
+
+        <div class="vendor-brand">
+
+            <div class="vendor-brand-icon">
+                DM
+            </div>
+
+            <div>
+                <h2>Digital</h2>
+                <span>Marketplace</span>
+            </div>
+
+        </div>
+
+
+        <nav class="vendor-navigation">
+
+            <a
+                href="./dashboard.html"
+                class="vendor-nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="./orders.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <a
+                href="./products.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    📦
+                </span>
+
+                <span>
+                    My Products
+                </span>
+
+            </a>
+
+
+            <a
+                href="./shop-profile.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    🏪
+                </span>
+
+                <span>
+                    Shop Profile
+                </span>
+
+            </a>
+
+
+<a
+    href="../index.html"
+    class="vendor-nav-item marketplace-nav-item"
+>
+
+    <span class="nav-icon">
+        🛍️
+    </span>
+
+    <span>
+        View Marketplace
+    </span>
+
+</a>
+
+
+
+            <a
+                href="./settings.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="vendor-sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="vendor-main">
+
+
+        <!-- TOP HEADER -->
+
+        <header class="vendor-header">
+
+            <div class="vendor-header-left">
+
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                    aria-label="Toggle sidebar"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Welcome back to your shop dashboard.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="vendor-header-right">
+
+                <div class="vendor-shop-info">
+
+                    <div
+                        class="vendor-avatar"
+                        id="vendorAvatar"
+                    >
+                        V
+                    </div>
+
+                    <div>
+
+                        <strong id="vendorName">
+                            Vendor
+                        </strong>
+
+                        <span id="vendorShopName">
+                            My Shop
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             DASHBOARD CONTENT
+        ========================== -->
+
+        <section class="vendor-content">
+
+
+            <!-- STAT CARDS -->
+
+            <div class="dashboard-stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Total Products
+                        </span>
+
+                        <span class="stat-icon">
+                            📦
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="totalProducts"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Total Orders
+                        </span>
+
+                        <span class="stat-icon">
+                            🛒
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="totalOrders"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Pending Orders
+                        </span>
+
+                        <span class="stat-icon">
+                            ⏳
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="pendingOrders"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Completed Orders
+                        </span>
+
+                        <span class="stat-icon">
+                            ✓
+                        </span>
+
+                    </div>
+
+                    <strong
+                        class="stat-value"
+                        id="completedOrders"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 SHOP OVERVIEW
+            ========================== -->
+
+            <div class="dashboard-grid">
+
+
+                <section class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Shop Overview
+                            </h2>
+
+                            <p>
+                                Your shop information
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="./shop-profile.html"
+                            class="panel-action"
+                        >
+                            Edit
+                        </a>
+
+                    </div>
+
+
+                    <div class="shop-overview">
+
+                        <div
+                            class="shop-logo"
+                            id="shopLogo"
+                        >
+                            🏪
+                        </div>
+
+
+                        <div class="shop-overview-details">
+
+                            <h3 id="overviewShopName">
+                                My Shop
+                            </h3>
+
+                            <p id="overviewShopCategory">
+                                Category
+                            </p>
+
+                            <p id="overviewShopDescription">
+                                Your shop description will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =========================
+                     RECENT ORDERS
+                ========================== -->
+
+                <section class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                Recent Orders
+                            </h2>
+
+                            <p>
+                                Latest customer orders
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="./orders.html"
+                            class="panel-action"
+                        >
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        id="recentOrders"
+                        class="recent-orders"
+                    >
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                🛒
+                            </div>
+
+                            <h3>
+                                No orders yet
+                            </h3>
+
+                            <p>
+                                Customer orders will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- =========================
+                 QUICK ACTIONS
+            ========================== -->
+
+            <section class="dashboard-panel quick-actions-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Quick Actions
+                        </h2>
+
+                        <p>
+                            Manage your shop quickly
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a
+                        href="./products.html"
+                        class="quick-action"
+                    >
+
+                        <span class="quick-action-icon">
+                            ➕
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Add Product
+                            </strong>
+
+                            <span>
+                                Add a new product to your shop
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="./orders.html"
+                        class="quick-action"
+                    >
+
+                        <span class="quick-action-icon">
+                            🛒
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Manage Orders
+                            </strong>
+
+                            <span>
+                                View and process customer orders
+                            </span>
+
+                        </div>
+
+                    </a>
+
+<a
+    href="./shop-profile.html"
+    class="quick-action"
+>
+
+    <span class="quick-action-icon">
+        🏪
+    </span>
+
+    <div>
+
+        <strong>
+            Shop Profile
+        </strong>
+
+        <span>
+            Update your shop information
+        </span>
+
+    </div>
+
+</a>
+                </div>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+
+    <script src="../js/vendor-dashboard.js"></script>
+
+</body>
+
+</html>

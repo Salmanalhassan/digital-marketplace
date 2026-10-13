@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Vendor Orders</title>
+
+    <link
+        rel="stylesheet"
+        href="./orders.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         SIDEBAR
+    ======================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="vendor-avatar" id="vendorAvatar">
+                V
+            </div>
+
+            <div class="vendor-info">
+
+                <strong id="vendorName">
+                    Vendor
+                </strong>
+
+                <span id="vendorShopName">
+                    Shop
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="./dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="./products.html">
+                Products
+            </a>
+
+            <a
+                href="./orders.html"
+                class="active"
+            >
+                Orders
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="logoutButton"
+            class="logout-button"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- ========================================
+         MAIN CONTENT
+    ======================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ========================================
+             TOP BAR
+        ======================================== -->
+
+        <header class="topbar">
+
+            <button
+                type="button"
+                id="sidebarToggle"
+                class="sidebar-toggle"
+            >
+                ☰
+            </button>
+
+
+            <div>
+
+                <h1>
+                    Orders
+                </h1>
+
+                <p>
+                    Manage your customer orders
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ========================================
+             MESSAGE
+        ======================================== -->
+
+        <div
+            id="orderMessage"
+            class="order-message"
+        ></div>
+
+
+
+        <!-- ========================================
+             ORDERS HEADER
+        ======================================== -->
+
+        <section class="orders-section">
+
+
+            <div class="orders-section-header">
+
+                <div>
+
+                    <h2>
+                        Your Orders
+                    </h2>
+
+                    <span id="orderCount">
+                        0 Orders
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 ORDERS TABLE
+            ======================================== -->
+
+            <div class="orders-table-wrapper">
+
+                <table class="orders-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Order
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                WhatsApp
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="ordersTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="orders-loading"
+                            >
+                                Loading orders...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 EMPTY STATE
+            ======================================== -->
+
+            <div
+                id="ordersEmptyState"
+                class="orders-empty-state"
+                style="display: none;"
+            >
+
+                <div class="empty-icon">
+                    📦
+                </div>
+
+                <h3>
+                    No Orders Yet
+                </h3>
+
+                <p>
+                    Your customer orders will appear here.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ========================================
+         ORDER DETAILS MODAL
+    ======================================== -->
+
+    <div
+        id="orderModal"
+        class="order-modal"
+        style="display: none;"
+    >
+
+        <div class="order-modal-overlay"></div>
+
+
+        <div class="order-modal-content">
+
+            <button
+                type="button"
+                id="closeOrderModal"
+                class="close-modal"
+            >
+                ×
+            </button>
+
+
+            <div id="orderDetails">
+
+                Loading order details...
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="./orders.js"></script>
+
+</body>
+
+</html>

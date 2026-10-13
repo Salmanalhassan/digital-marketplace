@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Shops | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./shops.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="admin-shops-page">
+
+
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
+        <header class="admin-shops-header">
+
+            <div>
+
+                <h1>
+                    Shops
+                </h1>
+
+                <p>
+                    Manage marketplace shops
+                </p>
+
+            </div>
+
+
+            <a
+                href="./dashboard.html"
+                class="back-dashboard-button"
+            >
+                ← Dashboard
+            </a>
+
+        </header>
+
+
+        <!-- ========================================
+             MESSAGE
+        ========================================= -->
+
+        <div
+            id="shopsMessage"
+            class="shops-message"
+        ></div>
+
+
+        <!-- ========================================
+             SHOPS CARD
+        ========================================= -->
+
+        <section class="shops-card">
+
+            <div class="shops-card-header">
+
+                <div>
+
+                    <h2>
+                        All Shops
+                    </h2>
+
+                    <p>
+                        View and manage registered marketplace shops
+                    </p>
+
+                </div>
+
+
+                <div class="shop-count">
+
+                    <span>
+                        Total Shops
+                    </span>
+
+                    <strong id="totalShops">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================
+                 TABLE
+            ========================================= -->
+
+            <div class="shops-table-wrapper">
+
+                <table class="shops-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Shop
+                            </th>
+
+                            <th>
+                                Vendor
+                            </th>
+
+                            <th>
+                                Category
+                            </th>
+
+                            <th>
+                                WhatsApp
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Created
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="shopsTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="shops-loading"
+                            >
+                                Loading shops...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <script src="./shops.js"></script>
+
+</body>
+
+</html>
+

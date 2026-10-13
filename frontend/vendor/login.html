@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Vendor login portal for Digital Marketplace"
+    >
+
+    <title>Vendor Login | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/vendor-login.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         VENDOR LOGIN PAGE
+    ========================================= -->
+
+    <main class="login-page">
+
+
+        <!-- ========================================
+             BACK TO MARKETPLACE
+        ========================================= -->
+
+
+
+
+        <!-- ========================================
+             BACKGROUND OVERLAY
+        ========================================= -->
+
+        <div
+            class="login-background"
+            aria-hidden="true"
+        ></div>
+
+        <div
+            class="login-overlay"
+            aria-hidden="true"
+        ></div>
+
+
+
+        <!-- ========================================
+             LOGIN CARD
+        ========================================= -->
+
+        <section class="login-card">
+
+
+            <!-- ========================================
+                 BRAND
+            ========================================= -->
+
+            <div class="login-brand">
+
+                <div class="login-brand-icon">
+                    DM
+                </div>
+
+                <div class="login-brand-text">
+
+                    <strong>
+                        Digital Marketplace
+                    </strong>
+
+                    <span>
+                        Vendor Portal
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 VENDOR BADGE
+            ========================================= -->
+
+            <div class="vendor-badge">
+
+                <span>
+                    🏪
+                </span>
+
+                <span>
+                    Vendor Access
+                </span>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 HEADING
+            ========================================= -->
+
+            <div class="login-heading">
+
+                <h1>
+                    Welcome back
+                </h1>
+
+                <p>
+                    Sign in to manage your shop,
+                    products and orders.
+                </p>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 ERROR MESSAGE
+            ========================================= -->
+
+            <div
+                id="loginError"
+                class="login-error"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+
+
+            <!-- ========================================
+                 LOGIN FORM
+            ========================================= -->
+
+            <form
+                id="vendorLoginForm"
+                novalidate
+            >
+
+
+                <!-- ====================================
+                     USERNAME
+                ===================================== -->
+
+                <div class="form-group">
+
+                    <label
+                        for="username"
+                    >
+                        Username
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <span
+                            class="input-icon"
+                            aria-hidden="true"
+                        >
+                            👤
+                        </span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <small
+                        id="usernameError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- ====================================
+                     PASSWORD
+                ===================================== -->
+
+                <div class="form-group">
+
+                    <div class="label-row">
+
+                        <label
+                            for="password"
+                        >
+                            Password
+                        </label>
+
+                    </div>
+
+
+                    <div class="input-wrapper password-wrapper">
+
+                        <span
+                            class="input-icon"
+                            aria-hidden="true"
+                        >
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+
+                    <small
+                        id="passwordError"
+                        class="field-error"
+                    ></small>
+
+                </div>
+
+
+
+                <!-- ====================================
+                     LOGIN BUTTON
+                ===================================== -->
+
+                <button
+                    type="submit"
+                    id="loginButton"
+                    class="login-button"
+                >
+
+                    <span
+                        class="login-button-icon"
+                    >
+                        →
+                    </span>
+
+                    <span
+                        id="loginButtonText"
+                    >
+                        Sign In
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- ========================================
+                 SECURITY INFORMATION
+            ========================================= -->
+
+            <div class="login-security">
+
+                <span class="security-icon">
+                    🔒
+                </span>
+
+                <p>
+                    Your vendor account is protected.
+                    Only authorized vendors can access
+                    this portal.
+                </p>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 FOOTER
+            ========================================= -->
+
+            <div class="login-footer">
+
+                <p>
+                    Vendor accounts are created
+                    by the administrator.
+                </p>
+
+                <span>
+                    © 2026 Digital Marketplace
+                </span>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script src="../js/vendor-login.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Products | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/vendor.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="vendor-sidebar">
+
+        <div class="vendor-brand">
+
+            <div class="vendor-brand-icon">
+                DM
+            </div>
+
+            <div>
+
+                <h2>Digital</h2>
+
+                <span>
+                    Marketplace
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="vendor-navigation">
+
+
+            <a
+                href="./dashboard.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="./orders.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <a
+                href="./products.html"
+                class="vendor-nav-item active"
+            >
+
+                <span class="nav-icon">
+                    📦
+                </span>
+
+                <span>
+                    My Products
+                </span>
+
+            </a>
+
+
+            <a
+                href="./profile.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    🏪
+                </span>
+
+                <span>
+                    Shop Profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="./settings.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="vendor-sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="vendor-main">
+
+
+        <!-- HEADER -->
+
+        <header class="vendor-header">
+
+            <div class="vendor-header-left">
+
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                    aria-label="Toggle sidebar"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <h1>
+                        My Products
+                    </h1>
+
+                    <p>
+                        Manage products available in your shop.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="vendor-header-right">
+
+                <div class="vendor-shop-info">
+
+                    <div
+                        class="vendor-avatar"
+                        id="vendorAvatar"
+                    >
+                        V
+                    </div>
+
+                    <div>
+
+                        <strong id="vendorName">
+                            Vendor
+                        </strong>
+
+                        <span id="vendorShopName">
+                            My Shop
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+
+        <section class="vendor-content">
+
+
+            <!-- PAGE TOP -->
+
+            <div class="products-page-top">
+
+                <div>
+
+                    <h2>
+                        Your Products
+                    </h2>
+
+                    <p>
+                        Add, edit and manage your shop products.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="addProductButton"
+                    class="add-product-button"
+                >
+
+                    <span>
+                        +
+                    </span>
+
+                    Add Product
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =========================
+                 PRODUCT MESSAGE
+            ========================== -->
+
+            <div
+                id="productMessage"
+                class="product-message"
+            ></div>
+
+
+
+            <!-- =========================
+                 PRODUCTS PANEL
+            ========================== -->
+
+            <section class="dashboard-panel products-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Products
+                        </h2>
+
+                        <p>
+                            Products currently listed in your shop.
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        id="productCount"
+                        class="product-count"
+                    >
+                        0 Products
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PRODUCTS TABLE
+                ========================== -->
+
+                <div class="products-table-wrapper">
+
+                    <table class="products-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Product
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Price
+                                </th>
+
+                                <th>
+                                    Stock
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="productsTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="products-loading"
+                                >
+
+                                    Loading products...
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- =========================
+                     EMPTY STATE
+                ========================== -->
+
+                <div
+                    id="productsEmptyState"
+                    class="products-empty-state"
+                    style="display: none;"
+                >
+
+                    <div class="products-empty-icon">
+                        📦
+                    </div>
+
+                    <h3>
+                        No products yet
+                    </h3>
+
+                    <p>
+                        You haven't added any products to your shop.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="emptyAddProductButton"
+                        class="add-product-button"
+                    >
+
+                        + Add Your First Product
+
+                    </button>
+
+                </div>
+
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="../js/vendor-products.js"></script>
+
+</body>
+
+</html>

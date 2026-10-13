@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Browse products from this shop on Digital Marketplace."
+    >
+
+    <title>Shop | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="./shop.css"
+    >
+</head>
+
+<body>
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header class="marketplace-header">
+
+        <div class="header-container">
+
+            <a
+                href="./index.html"
+                class="brand"
+            >
+
+                <div class="brand-icon">
+                    DM
+                </div>
+
+                <div class="brand-text">
+                    <strong>Digital</strong>
+                    <span>Marketplace</span>
+                </div>
+
+            </a>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="./index.html"
+                    class="back-link"
+                >
+                    <span class="back-arrow">←</span>
+                    <span>Marketplace</span>
+                </a>
+
+
+                <a
+                    href="./cart.html"
+                    class="cart-link"
+                >
+
+                    <span class="cart-symbol">🛒</span>
+
+                    <span class="cart-label">
+                        Cart
+                    </span>
+
+                    <span
+                        id="cartCount"
+                        class="cart-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main class="shop-page">
+
+        <!-- ========================================
+             MESSAGE
+        ======================================== -->
+
+        <div
+            id="shopMessage"
+            class="shop-message"
+        ></div>
+
+
+
+        <!-- ========================================
+             SHOP HEADER
+        ======================================== -->
+
+        <section
+            id="shopHeader"
+            class="shop-header"
+        >
+
+            <div class="shop-header-loading">
+
+                <div class="loading-spinner"></div>
+
+                <span>
+                    Loading shop...
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ========================================
+             PRODUCTS
+        ======================================== -->
+
+        <section class="shop-products-section">
+
+            <div class="section-heading">
+
+                <div class="section-heading-content">
+
+                    <span class="section-label">
+                        SHOP PRODUCTS
+                    </span>
+
+                    <h2>
+                        Explore Products
+                    </h2>
+
+                    <p id="productCountText">
+                        Browse products from this shop.
+                    </p>
+
+                </div>
+
+
+                <div class="product-search-box">
+
+                    <span
+                        class="search-icon"
+                        aria-hidden="true"
+                    >
+                        🔍
+                    </span>
+
+                    <input
+                        type="search"
+                        id="productSearch"
+                        placeholder="Search products..."
+                        autocomplete="off"
+                        aria-label="Search products"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 PRODUCTS GRID
+            ======================================== -->
+
+            <div
+                id="productsGrid"
+                class="products-grid"
+            >
+
+                <div class="products-loading">
+
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading products...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 EMPTY PRODUCTS
+            ======================================== -->
+
+            <div
+                id="emptyProducts"
+                class="empty-products"
+                style="display: none;"
+            >
+
+                <div class="empty-icon">
+                    📦
+                </div>
+
+                <h3>
+                    No products available
+                </h3>
+
+                <p>
+                    This shop currently has no products in stock.
+                </p>
+
+                <a
+                    href="./index.html"
+                    class="empty-action"
+                >
+                    ← Explore Other Shops
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer class="marketplace-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a
+                    href="./index.html"
+                    class="footer-logo"
+                >
+                    <span class="footer-logo-icon">
+                        DM
+                    </span>
+
+                    <span class="footer-logo-text">
+                        Digital Marketplace
+                    </span>
+                </a>
+
+                <p>
+                    Shop local. Buy simple.
+                    Discover trusted products from local vendors.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div class="footer-column">
+
+                    <h4>
+                        Marketplace
+                    </h4>
+
+                    <a href="./index.html">
+                        Home
+                    </a>
+
+                    <a href="./index.html#shops">
+                        Shops
+                    </a>
+
+                    <a href="./cart.html">
+                        Your Cart
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        Quick Access
+                    </h4>
+
+                    <a href="./index.html">
+                        Explore Shops
+                    </a>
+
+                    <a href="./cart.html">
+                        View Order
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Digital Marketplace.
+                All rights reserved.
+            </p>
+
+            <span>
+                Supporting local vendors, one shop at a time.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script src="./shop.js"></script>
+
+</body>
+
+</html>
+

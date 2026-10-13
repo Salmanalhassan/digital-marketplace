@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Admin login for Digital Marketplace"
+    >
+
+    <title>Admin Login | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="./login.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ========================================
+         ADMIN LOGIN PAGE
+    ========================================= -->
+
+    <main class="admin-login-page">
+
+
+        <!-- ========================================
+             BACK TO MARKETPLACE
+        ========================================= -->
+
+        <a
+            href="../index.html"
+            class="back-marketplace"
+        >
+            <span>←</span>
+            <span>Back to Marketplace</span>
+        </a>
+
+
+
+        <!-- ========================================
+             LOGIN CARD
+        ========================================= -->
+
+        <section class="admin-login-card">
+
+
+            <!-- ========================================
+                 BRAND
+            ========================================= -->
+
+            <div class="admin-login-brand">
+
+                <div class="admin-logo">
+                    DM
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        Digital Marketplace
+                    </strong>
+
+                    <span>
+                        Administration
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 ADMIN BADGE
+            ========================================= -->
+
+            <div class="admin-badge">
+
+                <span class="badge-icon">
+                    🔐
+                </span>
+
+                <span>
+                    Secure Admin Access
+                </span>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 HEADING
+            ========================================= -->
+
+            <div class="admin-login-heading">
+
+                <h1>
+                    Welcome back
+                </h1>
+
+                <p>
+                    Sign in to manage your marketplace.
+                </p>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 MESSAGE
+            ======================================== -->
+
+            <div
+                id="adminLoginMessage"
+                class="admin-login-message"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+
+
+            <!-- ========================================
+                 FORM
+            ======================================== -->
+
+            <form
+                id="adminLoginForm"
+                novalidate
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="adminEmail">
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span
+                            class="input-icon"
+                            aria-hidden="true"
+                        >
+                            ✉
+                        </span>
+
+                        <input
+                            type="email"
+                            id="adminEmail"
+                            name="email"
+                            placeholder="admin@digitalmarketplace.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="password-label-row">
+
+                        <label for="adminPassword">
+                            Password
+                        </label>
+
+                    </div>
+
+
+                    <div class="input-wrapper">
+
+                        <span
+                            class="input-icon"
+                            aria-hidden="true"
+                        >
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleAdminPassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LOGIN -->
+
+                <button
+                    type="submit"
+                    id="adminLoginButton"
+                    class="admin-login-button"
+                >
+
+                    <span class="button-icon">
+                        →
+                    </span>
+
+                    <span class="button-text">
+                        Sign In
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- ========================================
+                 SECURITY NOTE
+            ======================================== -->
+
+            <div class="login-security-note">
+
+                <span>
+                    🔒
+                </span>
+
+                <p>
+                    This area is restricted to authorized
+                    marketplace administrators.
+                </p>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 FOOTER
+            ======================================== -->
+
+            <div class="login-footer">
+
+                <span>
+                    © 2026 Digital Marketplace
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script src="./login.js"></script>
+
+</body>
+
+</html>
+

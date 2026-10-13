@@ -1,0 +1,433 @@
+
+/* ========================================
+   ADD VENDOR PAGE
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #111827;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+.add-vendor-page {
+
+    min-height: 100vh;
+
+    padding: 32px 40px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.add-vendor-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+}
+
+
+.add-vendor-header h1 {
+
+    margin: 0 0 5px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+.add-vendor-header p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-vendors-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px 15px;
+
+    background: #111827;
+
+    color: #ffffff;
+
+    border: 1px solid #111827;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.back-vendors-button:hover {
+
+    background: #1f2937;
+
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.add-vendor-message {
+
+    display: none;
+
+    margin-bottom: 20px;
+
+    padding: 12px 14px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+}
+
+
+.add-vendor-message.show {
+
+    display: block;
+}
+
+
+.add-vendor-message.error {
+
+    background: #fef2f2;
+
+    color: #b91c1c;
+
+    border: 1px solid #fecaca;
+}
+
+
+.add-vendor-message.success {
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    border: 1px solid #bbf7d0;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.add-vendor-card {
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.04);
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.add-vendor-card-header {
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.add-vendor-card-header h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 17px;
+}
+
+
+.add-vendor-card-header p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.add-vendor-form {
+
+    padding: 26px 24px;
+}
+
+
+.form-group {
+
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 12px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #111827;
+
+    box-shadow:
+        0 0 0 3px rgba(17, 24, 39, 0.07);
+}
+
+
+.form-group input::placeholder {
+
+    color: #94a3b8;
+}
+
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #e5e7eb;
+
+    margin-top: 8px;
+}
+
+
+.cancel-button,
+.create-vendor-button {
+
+    min-width: 120px;
+
+    height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+
+
+.cancel-button {
+
+    background: #ffffff;
+
+    color: #475569;
+
+    border: 1px solid #cbd5e1;
+}
+
+
+.cancel-button:hover {
+
+    background: #f8fafc;
+}
+
+
+.create-vendor-button {
+
+    background: #111827;
+
+    color: #ffffff;
+
+    border: 1px solid #111827;
+}
+
+
+.create-vendor-button:hover {
+
+    background: #1f2937;
+}
+
+
+.create-vendor-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .add-vendor-page {
+
+        padding: 22px 16px;
+    }
+
+
+    .add-vendor-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .back-vendors-button {
+
+        width: 100%;
+    }
+
+
+    .add-vendor-form {
+
+        padding: 20px 18px;
+    }
+
+
+    .form-actions {
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+
+    .cancel-button,
+    .create-vendor-button {
+
+        width: 100%;
+    }
+
+}
+

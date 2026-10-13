@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings - Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="./settings.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         PAGE
+    ========================================= -->
+
+    <div class="settings-page">
+
+
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
+        <header class="settings-header">
+
+            <div>
+
+                <h1>Settings</h1>
+
+                <p>
+                    Manage your vendor account settings
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ========================================
+             MESSAGE
+        ========================================= -->
+
+        <div
+            id="settingsMessage"
+            class="settings-message"
+        ></div>
+
+
+
+        <!-- ========================================
+             SETTINGS CONTENT
+        ========================================= -->
+
+        <main class="settings-container">
+
+
+            <!-- ========================================
+                 ACCOUNT SECURITY
+            ========================================= -->
+
+            <section class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+
+                        <h2>Account Security</h2>
+
+                        <p>
+                            Change your vendor account password.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ========================================
+                     CHANGE PASSWORD FORM
+                ========================================= -->
+
+                <form
+                    id="changePasswordForm"
+                    class="settings-form"
+                >
+
+
+                    <!-- CURRENT PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="currentPassword">
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            name="currentPassword"
+                            placeholder="Enter your current password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- NEW PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="newPassword">
+                            New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            name="newPassword"
+                            placeholder="Enter your new password"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                        <small>
+                            Password must be at least 6 characters.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- CONFIRM PASSWORD -->
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your new password"
+                            autocomplete="new-password"
+                            minlength="6"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- SUBMIT -->
+
+                    <div class="settings-form-actions">
+
+                        <button
+                            type="submit"
+                            id="changePasswordButton"
+                        >
+                            Change Password
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- ========================================
+                 ACCOUNT INFORMATION
+            ========================================= -->
+
+            <section class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <div>
+
+                        <h2>Account Information</h2>
+
+                        <p>
+                            Your vendor account is protected by authentication.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-info">
+
+                    <div class="settings-info-row">
+
+                        <span>
+                            Account Type
+                        </span>
+
+                        <strong>
+                            Vendor
+                        </strong>
+
+                    </div>
+
+
+                    <div class="settings-info-row">
+
+                        <span>
+                            Security
+                        </span>
+
+                        <strong>
+                            Password Protected
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ========================================= -->
+
+    <script src="./settings.js"></script>
+
+</body>
+
+</html>
+

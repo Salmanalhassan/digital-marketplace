@@ -1,0 +1,832 @@
+
+/* ========================================
+   SHOP PROFILE
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   SIDEBAR
+======================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #ffffff;
+    border-right: 1px solid #e5e7eb;
+
+    padding: 24px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding: 0 10px 28px;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+
+/* ========================================
+   SIDEBAR NAV
+======================================== */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-nav a {
+    display: block;
+
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    color: #4b5563;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.sidebar-nav a.active {
+    background: #111827;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   LOGOUT
+======================================== */
+
+#logoutButton {
+    margin-top: auto;
+
+    width: 100%;
+
+    border: 0;
+    border-radius: 8px;
+
+    padding: 12px 14px;
+
+    background: #f3f4f6;
+    color: #374151;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+#logoutButton:hover {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.main-content {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    padding: 32px;
+}
+
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #111827;
+}
+
+.page-header p {
+    margin-top: 6px;
+
+    font-size: 14px;
+    color: #6b7280;
+}
+
+
+/* ========================================
+   SIDEBAR TOGGLE
+======================================== */
+
+#sidebarToggle {
+    display: none;
+
+    border: 0;
+    border-radius: 8px;
+
+    width: 42px;
+    height: 42px;
+
+    background: #111827;
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.shop-message {
+    display: none;
+
+    margin-bottom: 20px;
+
+    padding: 12px 15px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.shop-message.show {
+    display: block;
+}
+
+.shop-message.success {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.shop-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.shop-message.loading {
+    display: block;
+
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+}
+
+
+/* ========================================
+   SHOP PROFILE CARD
+======================================== */
+
+.shop-profile-card {
+    width: 100%;
+    max-width: 860px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.shop-profile-header {
+    padding-bottom: 22px;
+
+    margin-bottom: 24px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.shop-profile-header h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.shop-profile-header p {
+    margin-top: 6px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #6b7280;
+}
+
+
+/* ========================================
+   SHOP STATUS
+======================================== */
+
+.shop-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    background: #f3f4f6;
+    color: #6b7280;
+
+    white-space: nowrap;
+}
+
+.shop-status.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.shop-status.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* ========================================
+   NO SHOP MESSAGE
+======================================== */
+
+.no-shop-message {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 24px;
+
+    padding: 18px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+.no-shop-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #f3f4f6;
+
+    font-size: 25px;
+}
+
+.no-shop-message h3 {
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.no-shop-message p {
+    margin-top: 5px;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #6b7280;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+#shopProfileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 0 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #111827;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input {
+    height: 46px;
+}
+
+.form-group textarea {
+    min-height: 120px;
+
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #111827;
+
+    box-shadow:
+        0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+.form-group small {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+
+/* ========================================
+   FORM ACTIONS
+======================================== */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 6px;
+
+    padding-top: 4px;
+}
+
+#saveShopButton,
+#cancelEditButton {
+    min-width: 140px;
+
+    height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* SAVE / CREATE */
+
+#saveShopButton {
+    border: 0;
+
+    background: #111827;
+    color: #ffffff;
+}
+
+#saveShopButton:hover {
+    background: #000000;
+}
+
+#saveShopButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* CANCEL */
+
+#cancelEditButton {
+    border: 1px solid #d1d5db;
+
+    background: #ffffff;
+    color: #374151;
+}
+
+#cancelEditButton:hover {
+    background: #f3f4f6;
+}
+
+
+/* ========================================
+   LOGO PREVIEW
+======================================== */
+
+.shop-logo-preview-container {
+    width: 100%;
+
+    padding: 16px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+}
+
+.shop-logo-preview {
+    display: block;
+
+    width: 100px;
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    background: #ffffff;
+}
+
+
+/* ========================================
+   SHOP DETAILS
+======================================== */
+
+.shop-details {
+    margin-top: 30px;
+
+    padding-top: 28px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.shop-details-header {
+    margin-bottom: 20px;
+}
+
+.shop-details-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.shop-details-header p {
+    margin-top: 6px;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #6b7280;
+}
+
+
+/* ========================================
+   SHOP DETAIL ROW
+======================================== */
+
+.shop-detail-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #f0f1f3;
+}
+
+.shop-detail-row:last-of-type {
+    border-bottom: 0;
+}
+
+.shop-detail-row span {
+    color: #6b7280;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    min-width: 120px;
+}
+
+.shop-detail-row strong {
+    flex: 1;
+
+    text-align: right;
+
+    color: #111827;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* ========================================
+   SHOP DETAIL ACTIONS
+======================================== */
+
+.shop-detail-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+#editShopButton,
+#addProductButton {
+    min-height: 44px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* EDIT */
+
+#editShopButton {
+    border: 1px solid #d1d5db;
+
+    background: #ffffff;
+    color: #374151;
+}
+
+#editShopButton:hover {
+    background: #f3f4f6;
+}
+
+
+/* ADD PRODUCT */
+
+#addProductButton {
+    border: 0;
+
+    background: #111827;
+    color: #ffffff;
+}
+
+#addProductButton:hover {
+    background: #000000;
+}
+
+
+/* ========================================
+   LOADING STATE
+======================================== */
+
+.shop-loading {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+
+        transition:
+            transform 0.25s ease;
+    }
+
+    body.sidebar-open .sidebar {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 22px 16px;
+    }
+
+    #sidebarToggle {
+        display: block;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .shop-profile-card {
+        padding: 20px;
+    }
+
+    .shop-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .no-shop-message {
+        align-items: flex-start;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+        flex-direction: column-reverse;
+    }
+
+    #saveShopButton,
+    #cancelEditButton {
+        width: 100%;
+    }
+
+    .shop-detail-row {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .shop-detail-row span {
+        min-width: 0;
+    }
+
+    .shop-detail-row strong {
+        text-align: left;
+    }
+
+    .shop-detail-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #editShopButton,
+    #addProductButton {
+        width: 100%;
+    }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .main-content {
+        padding: 18px 12px;
+    }
+
+    .shop-profile-card {
+        padding: 17px;
+        border-radius: 10px;
+    }
+
+    .page-header {
+        margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .page-header p {
+        font-size: 13px;
+    }
+
+    .shop-profile-header h2 {
+        font-size: 17px;
+    }
+
+    .no-shop-message {
+        padding: 14px;
+    }
+
+    .no-shop-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 21px;
+    }
+
+}
+

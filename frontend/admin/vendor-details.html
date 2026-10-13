@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Vendor Details | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./vendor-details.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="vendor-details-page">
+
+
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
+        <header class="vendor-details-header">
+
+            <div>
+
+                <h1>
+                    Vendor Details
+                </h1>
+
+                <p>
+                    View vendor information and marketplace activity
+                </p>
+
+            </div>
+
+
+            <a
+                href="./vendors.html"
+                class="back-vendors-button"
+            >
+                ← Back to Vendors
+            </a>
+
+        </header>
+
+
+        <!-- ========================================
+             MESSAGE
+        ========================================= -->
+
+        <div
+            id="vendorDetailsMessage"
+            class="vendor-details-message"
+        ></div>
+
+
+        <!-- ========================================
+             LOADING
+        ========================================= -->
+
+        <div
+            id="vendorDetailsLoading"
+            class="vendor-details-loading"
+        >
+            Loading vendor details...
+        </div>
+
+
+        <!-- ========================================
+             MAIN CONTENT
+        ========================================= -->
+
+        <main
+            id="vendorDetailsContent"
+            class="vendor-details-content"
+            style="display: none;"
+        >
+
+
+            <!-- ========================================
+                 VENDOR PROFILE
+            ========================================= -->
+
+            <section class="vendor-profile-card">
+
+                <div class="vendor-profile-top">
+
+                    <div class="vendor-avatar" id="vendorAvatar">
+                        V
+                    </div>
+
+
+                    <div class="vendor-profile-info">
+
+                        <h2 id="vendorName">
+                            Vendor Name
+                        </h2>
+
+                        <p id="vendorUsername">
+                            @username
+                        </p>
+
+                    </div>
+
+
+                    <span
+                        id="vendorStatus"
+                        class="vendor-status"
+                    >
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="vendor-profile-details">
+
+                    <div class="vendor-detail-item">
+
+                        <span>
+                            Vendor ID
+                        </span>
+
+                        <strong id="vendorId">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="vendor-detail-item">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <strong id="vendorPhone">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="vendor-detail-item">
+
+                        <span>
+                            Username
+                        </span>
+
+                        <strong id="vendorUsernameDetail">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="vendor-detail-item">
+
+                        <span>
+                            Joined
+                        </span>
+
+                        <strong id="vendorCreatedAt">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================================
+                 SUMMARY
+            ========================================= -->
+
+            <section class="vendor-summary-grid">
+
+
+                <div class="vendor-summary-card">
+
+                    <span>
+                        Shops
+                    </span>
+
+                    <strong id="totalVendorShops">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="vendor-summary-card">
+
+                    <span>
+                        Products
+                    </span>
+
+                    <strong id="totalVendorProducts">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="vendor-summary-card">
+
+                    <span>
+                        Orders
+                    </span>
+
+                    <strong id="totalVendorOrders">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ========================================
+                 SHOPS
+            ========================================= -->
+
+            <section class="vendor-section-card">
+
+                <div class="vendor-section-header">
+
+                    <div>
+
+                        <h3>
+                            Shops
+                        </h3>
+
+                        <p>
+                            Shops owned by this vendor
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="vendorShopsContainer"
+                    class="vendor-section-content"
+                ></div>
+
+            </section>
+
+
+            <!-- ========================================
+                 PRODUCTS
+            ========================================= -->
+
+            <section class="vendor-section-card">
+
+                <div class="vendor-section-header">
+
+                    <div>
+
+                        <h3>
+                            Products
+                        </h3>
+
+                        <p>
+                            Products listed by this vendor
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vendor-table-wrapper">
+
+                    <table class="vendor-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID
+                                </th>
+
+                                <th>
+                                    Product
+                                </th>
+
+                                <th>
+                                    Category
+                                </th>
+
+                                <th>
+                                    Price
+                                </th>
+
+                                <th>
+                                    Stock
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="vendorProductsTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="vendor-table-loading"
+                                >
+                                    Loading products...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================================
+                 ORDERS
+            ========================================= -->
+
+            <section class="vendor-section-card">
+
+                <div class="vendor-section-header">
+
+                    <div>
+
+                        <h3>
+                            Orders
+                        </h3>
+
+                        <p>
+                            Orders received by this vendor
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vendor-table-wrapper">
+
+                    <table class="vendor-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Order ID
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Phone
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="vendorOrdersTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="6"
+                                    class="vendor-table-loading"
+                                >
+                                    Loading orders...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <script src="./vendor-details.js"></script>
+
+</body>
+
+</html>
+

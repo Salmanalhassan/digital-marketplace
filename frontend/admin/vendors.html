@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Vendors | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./vendors.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="admin-vendors-page">
+
+
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
+        <header class="admin-vendors-header">
+
+            <div>
+
+                <h1>
+                    Vendors
+                </h1>
+
+                <p>
+                    Manage marketplace vendors
+                </p>
+
+            </div>
+
+
+            <a
+                href="./dashboard.html"
+                class="back-dashboard-button"
+            >
+                ← Dashboard
+            </a>
+
+        </header>
+
+
+        <!-- ========================================
+             MESSAGE
+        ========================================= -->
+
+        <div
+            id="vendorsMessage"
+            class="vendors-message"
+        ></div>
+
+
+        <!-- ========================================
+             VENDORS CARD
+        ========================================= -->
+
+        <section class="vendors-card">
+
+            <div class="vendors-card-header">
+
+                <div>
+
+                    <h2>
+                        All Vendors
+                    </h2>
+
+                    <p>
+                        View and manage registered vendors
+                    </p>
+
+                </div>
+
+<div class="vendors-card-actions">
+
+    <div class="vendor-count">
+
+        <span>
+            Total Vendors
+        </span>
+
+        <strong id="totalVendors">
+            0
+        </strong>
+
+    </div>
+
+
+    <a
+        href="./add-vendor.html"
+        class="add-vendor-button"
+    >
+        + Add Vendor
+    </a>
+
+</div>
+
+
+            <!-- ========================================
+                 TABLE
+            ========================================= -->
+
+            <div class="vendors-table-wrapper">
+
+                <table class="vendors-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+
+                            <th>
+                                Username
+                            </th>
+
+                            <th>
+                                Phone
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Created
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="vendorsTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="vendors-loading"
+                            >
+                                Loading vendors...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <script src="./vendors.js"></script>
+
+</body>
+
+</html>
+

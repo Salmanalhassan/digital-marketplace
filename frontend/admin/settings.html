@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./settings.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         SIDEBAR
+    ======================================== -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                DM
+            </div>
+
+            <div>
+                <h2>Digital</h2>
+                <span>Marketplace</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-navigation">
+
+            <a
+                href="./dashboard.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">◉</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="./vendors.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">👥</span>
+                <span>Vendors</span>
+            </a>
+
+
+            <a
+                href="./shops.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">🏪</span>
+                <span>Shops</span>
+            </a>
+
+
+            <a
+                href="./products.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">📦</span>
+                <span>Products</span>
+            </a>
+
+
+            <a
+                href="./orders.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">🛒</span>
+                <span>Orders</span>
+            </a>
+
+
+            <a
+                href="./settings.html"
+                class="admin-nav-item active"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- ========================================
+             HEADER
+        ======================================== -->
+
+        <header class="admin-header">
+
+            <div class="admin-header-left">
+
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                    aria-label="Toggle sidebar"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p>
+                        Manage your administrator account and marketplace settings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-header-right">
+
+                <div class="admin-profile">
+
+                    <div
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong id="adminName">
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ========================================
+             CONTENT
+        ======================================== -->
+
+        <section class="admin-content">
+
+
+            <!-- ========================================
+                 PAGE TITLE
+            ======================================== -->
+
+            <div class="page-top">
+
+                <div>
+
+                    <h2>
+                        Account Settings
+                    </h2>
+
+                    <p>
+                        Update your administrator account information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 MESSAGE
+            ======================================== -->
+
+            <div
+                id="settingsMessage"
+                class="settings-message"
+            ></div>
+
+
+
+            <!-- ========================================
+                 SETTINGS GRID
+            ======================================== -->
+
+            <div class="settings-grid">
+
+
+                <!-- ========================================
+                     ADMIN PROFILE
+                ======================================== -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Administrator Profile
+                            </h3>
+
+                            <p>
+                                Update your account information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="profileForm"
+                        class="settings-form"
+                    >
+
+                        <div class="form-group">
+
+                            <label for="adminNameInput">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="adminNameInput"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="adminEmailInput">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="adminEmailInput"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Profile
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- ========================================
+                     CHANGE PASSWORD
+                ======================================== -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon">
+                            🔐
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Change Password
+                            </h3>
+
+                            <p>
+                                Keep your administrator account secure.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="passwordForm"
+                        class="settings-form"
+                    >
+
+                        <div class="form-group">
+
+                            <label for="currentPassword">
+                                Current Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                name="currentPassword"
+                                placeholder="Enter current password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="newPassword">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="newPassword"
+                                name="newPassword"
+                                placeholder="Enter new password"
+                                autocomplete="new-password"
+                                minlength="6"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm new password"
+                                autocomplete="new-password"
+                                minlength="6"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Change Password
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- ========================================
+                     MARKETPLACE SETTINGS
+                ======================================== -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon">
+                            🏪
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Marketplace
+                            </h3>
+
+                            <p>
+                                General marketplace information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="marketplaceForm"
+                        class="settings-form"
+                    >
+
+                        <div class="form-group">
+
+                            <label for="marketplaceName">
+                                Marketplace Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="marketplaceName"
+                                name="marketplaceName"
+                                value="Digital Marketplace"
+                                placeholder="Marketplace name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="marketplaceDescription">
+                                Marketplace Description
+                            </label>
+
+                            <textarea
+                                id="marketplaceDescription"
+                                name="marketplaceDescription"
+                                rows="4"
+                                placeholder="Enter marketplace description"
+                            >A digital marketplace for local vendors and customers.</textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Save Marketplace
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- ========================================
+                     SECURITY
+                ======================================== -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div class="settings-card-icon">
+                            🛡️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Security
+                            </h3>
+
+                            <p>
+                                Manage basic security preferences.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="security-list">
+
+
+                        <div class="security-item">
+
+                            <div>
+
+                                <strong>
+                                    Administrator Access
+                                </strong>
+
+                                <span>
+                                    Your account has administrator privileges.
+                                </span>
+
+                            </div>
+
+                            <span class="security-status">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="security-item">
+
+                            <div>
+
+                                <strong>
+                                    Authentication
+                                </strong>
+
+                                <span>
+                                    Your dashboard requires an access token.
+                                </span>
+
+                            </div>
+
+                            <span class="security-status">
+                                Enabled
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script src="./settings.js"></script>
+
+</body>
+
+</html>
+

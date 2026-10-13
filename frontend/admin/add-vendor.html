@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Vendor | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./add-vendor.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="add-vendor-page">
+
+
+        <!-- ========================================
+             HEADER
+        ========================================= -->
+
+        <header class="add-vendor-header">
+
+            <div>
+
+                <h1>
+                    Add Vendor
+                </h1>
+
+                <p>
+                    Create a new marketplace vendor account
+                </p>
+
+            </div>
+
+
+            <a
+                href="./vendors.html"
+                class="back-vendors-button"
+            >
+                ← Back to Vendors
+            </a>
+
+        </header>
+
+
+        <!-- ========================================
+             MESSAGE
+        ========================================= -->
+
+        <div
+            id="addVendorMessage"
+            class="add-vendor-message"
+        ></div>
+
+
+        <!-- ========================================
+             FORM CARD
+        ========================================= -->
+
+        <section class="add-vendor-card">
+
+
+            <div class="add-vendor-card-header">
+
+                <div>
+
+                    <h2>
+                        Vendor Information
+                    </h2>
+
+                    <p>
+                        Enter the vendor's account details below.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================
+                 FORM
+            ========================================= -->
+
+            <form
+                id="addVendorForm"
+                class="add-vendor-form"
+                novalidate
+            >
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="vendorName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="vendorName"
+                        name="name"
+                        placeholder="Enter vendor full name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="vendorUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="vendorUsername"
+                        name="username"
+                        placeholder="Enter vendor username"
+                        autocomplete="username"
+                        required
+                    >
+
+                    <small>
+                        This username will be used by the vendor to login.
+                    </small>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="form-group">
+
+                    <label for="vendorPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="vendorPhone"
+                        name="phone"
+                        placeholder="08012345678"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="vendorPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="vendorPassword"
+                        name="password"
+                        placeholder="Enter password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <small>
+                        Use at least 6 characters.
+                    </small>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="vendorConfirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="vendorConfirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="vendorStatus">
+                        Account Status
+                    </label>
+
+                    <select
+                        id="vendorStatus"
+                        name="status"
+                    >
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <a
+                        href="./vendors.html"
+                        class="cancel-button"
+                    >
+                        Cancel
+                    </a>
+
+
+                    <button
+                        type="submit"
+                        id="createVendorButton"
+                        class="create-vendor-button"
+                    >
+                        Create Vendor
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </section>
+
+
+    </div>
+
+
+    <script src="./add-vendor.js"></script>
+
+</body>
+
+</html>
+

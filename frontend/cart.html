@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Your Cart - Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/cart.css"
+    >
+</head>
+
+<body>
+
+    <header class="cart-header">
+
+        <a href="./index.html" class="back-link">
+            ← Marketplace
+        </a>
+
+        <h1>Your Order</h1>
+
+        <div class="cart-icon">
+            🛒
+            <span id="cartCount">0</span>
+        </div>
+
+    </header>
+
+
+    <main class="cart-container">
+
+        <!-- Empty Cart -->
+
+        <section
+            id="emptyCart"
+            class="empty-cart hidden"
+        >
+
+            <div class="empty-icon">
+                🛒
+            </div>
+
+            <h2>Your cart is empty</h2>
+
+            <p>
+                You haven't added any products yet.
+            </p>
+
+            <a
+                href="./index.html"
+                class="btn primary-btn"
+            >
+                Browse Shops
+            </a>
+
+        </section>
+
+
+        <!-- Cart -->
+
+        <section
+            id="cartContent"
+            class="cart-content"
+        >
+
+            <div class="shop-header">
+
+                <div>
+                    <span class="shop-label">
+                        SHOP
+                    </span>
+
+                    <h2 id="shopName">
+                        Aisha Fashion Store
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div
+                id="cartItems"
+                class="cart-items"
+            >
+            </div>
+
+
+            <div class="cart-summary">
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="subtotal">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-row total-row">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong id="total">
+                        ₦0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="checkoutBtn"
+                    class="btn checkout-btn"
+                >
+                    Proceed to Checkout
+                </button>
+
+
+                <a
+                    href="./index.html"
+                    class="continue-link"
+                >
+                    ← Continue Shopping
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="./js/cart.js"></script>
+
+    <script src="./js/cart-page.js"></script>
+
+</body>
+
+</html>

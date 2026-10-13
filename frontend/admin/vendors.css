@@ -1,0 +1,606 @@
+
+/* ========================================
+   ADMIN VENDORS PAGE
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* ========================================
+   PAGE
+======================================== */
+
+.admin-vendors-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 32px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.admin-vendors-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+
+.admin-vendors-header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111827;
+}
+
+
+.admin-vendors-header p {
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 0 18px;
+
+    border-radius: 8px;
+
+    background: #111827;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.back-dashboard-button:hover {
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.vendors-message {
+    display: none;
+
+    margin-bottom: 20px;
+    padding: 13px 16px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.vendors-message.show {
+    display: block;
+}
+
+
+.vendors-message.success {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+
+.vendors-message.error {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.vendors-card {
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+
+/* ========================================
+   CARD HEADER
+======================================== */
+
+.vendors-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.vendors-card-header h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+
+.vendors-card-header p {
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   VENDOR COUNT
+======================================== */
+
+.vendor-count {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 14px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    background: #f9fafb;
+}
+
+
+.vendor-count span {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+.vendor-count strong {
+    color: #111827;
+    font-size: 18px;
+}
+
+
+/* ========================================
+   TABLE WRAPPER
+======================================== */
+
+.vendors-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* ========================================
+   TABLE
+======================================== */
+
+.vendors-table {
+    width: 100%;
+    min-width: 850px;
+
+    border-collapse: collapse;
+}
+
+
+.vendors-table th {
+    padding: 14px 18px;
+
+    background: #f9fafb;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-align: left;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+
+.vendors-table td {
+    padding: 16px 18px;
+
+    border-bottom: 1px solid #f0f1f3;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+
+.vendors-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+
+.vendors-table tbody tr:hover {
+    background: #fafafa;
+}
+
+
+.vendors-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+
+.vendors-loading {
+    padding: 40px 20px !important;
+
+    text-align: center !important;
+
+    color: #6b7280 !important;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.vendor-status {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 76px;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.vendor-status.active {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+
+.vendor-status.inactive {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+
+/* ========================================
+   ACTION
+======================================== */
+
+.vendor-status-select {
+    min-width: 115px;
+
+    padding: 8px 10px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #374151;
+
+    font-size: 13px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.vendor-status-select:focus {
+    border-color: #6b7280;
+
+    box-shadow:
+        0 0 0 3px rgba(107, 114, 128, 0.12);
+}
+
+
+.vendor-status-select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.vendors-empty {
+    padding: 50px 20px !important;
+
+    text-align: center !important;
+
+    color: #6b7280 !important;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .admin-vendors-page {
+        padding: 20px;
+    }
+
+
+    .admin-vendors-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .admin-vendors-header h1 {
+        font-size: 25px;
+    }
+
+
+    .back-dashboard-button {
+        width: 100%;
+    }
+
+
+    .vendors-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .vendor-count {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .admin-vendors-page {
+        padding: 14px;
+    }
+
+
+    .vendors-card-header {
+        padding: 18px;
+    }
+
+
+    .vendors-table th,
+    .vendors-table td {
+        padding: 13px 14px;
+    }
+
+}
+
+
+/* ========================================
+   VENDOR ACTIONS
+======================================== */
+
+.vendor-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   VIEW DETAILS BUTTON
+======================================== */
+
+.vendor-view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 12px;
+
+    background: #111827;
+    color: #ffffff;
+
+    border: 1px solid #111827;
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.vendor-view-button:hover {
+    background: #1f2937;
+    border-color: #1f2937;
+
+    transform: translateY(-1px);
+}
+
+
+.vendor-view-button:active {
+    transform: translateY(0);
+}
+
+
+/* ========================================
+   STATUS SELECT
+======================================== */
+
+.vendor-status-select {
+    min-width: 92px;
+
+    padding: 7px 28px 7px 10px;
+
+    background: #ffffff;
+    color: #111827;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.vendor-status-select:hover {
+    border-color: #94a3b8;
+}
+
+
+.vendor-status-select:focus {
+    border-color: #111827;
+
+    box-shadow:
+        0 0 0 2px rgba(17, 24, 39, 0.08);
+}
+
+
+.vendor-status-select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .vendor-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+
+    .vendor-view-button {
+        width: 100%;
+    }
+
+
+    .vendor-status-select {
+        width: 100%;
+    }
+
+}
+
+.vendors-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.add-vendor-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    background: #111827;
+    color: #ffffff;
+    transition: 0.2s ease;
+}
+
+.add-vendor-button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+@media (max-width: 700px) {
+
+    .vendors-card-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .add-vendor-button {
+        width: 100%;
+    }
+
+}

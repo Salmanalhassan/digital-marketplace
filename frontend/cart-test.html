@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart Test</title>
+</head>
+
+<body>
+
+    <h1>Cart Test</h1>
+
+    <button id="addBtn">
+        Add Product
+    </button>
+
+    <button id="viewBtn">
+        View Cart
+    </button>
+
+    <button id="clearBtn">
+        Clear Cart
+    </button>
+
+    <pre id="output"></pre>
+
+    <script src="./js/cart.js"></script>
+
+    <script>
+
+        const product = {
+            id: 1,
+            name: "Premium Ankara Dress",
+            price: 30000,
+            stock: 15
+        };
+
+        const shop = {
+            id: 1,
+            name: "Aisha Fashion Store",
+            whatsapp_number: "08012345678"
+        };
+
+        document
+            .getElementById("addBtn")
+            .addEventListener("click", () => {
+
+                const result = Cart.addToCart(
+                    product,
+                    shop
+                );
+
+                document
+                    .getElementById("output")
+                    .textContent =
+                    JSON.stringify(
+                        result,
+                        null,
+                        2
+                    );
+            });
+
+        document
+            .getElementById("viewBtn")
+            .addEventListener("click", () => {
+
+                const cart = Cart.getCart();
+
+                document
+                    .getElementById("output")
+                    .textContent =
+                    JSON.stringify(
+                        cart,
+                        null,
+                        2
+                    );
+            });
+
+        document
+            .getElementById("clearBtn")
+            .addEventListener("click", () => {
+
+                Cart.clearCart();
+
+                document
+                    .getElementById("output")
+                    .textContent =
+                    "Cart cleared";
+            });
+
+    </script>
+
+</body>
+
+</html>

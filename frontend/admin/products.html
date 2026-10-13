@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./products.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         SIDEBAR
+    ======================================== -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                DM
+            </div>
+
+            <div>
+                <h2>Digital</h2>
+                <span>Marketplace</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-navigation">
+
+            <a
+                href="./dashboard.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">◉</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="./vendors.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">👥</span>
+                <span>Vendors</span>
+            </a>
+
+
+            <a
+                href="./shops.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">🏪</span>
+                <span>Shops</span>
+            </a>
+
+
+            <a
+                href="./products.html"
+                class="admin-nav-item active"
+            >
+                <span class="nav-icon">📦</span>
+                <span>Products</span>
+            </a>
+
+
+            <a
+                href="./orders.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">🛒</span>
+                <span>Orders</span>
+            </a>
+
+
+            <a
+                href="./settings.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- ========================================
+             HEADER
+        ======================================== -->
+
+        <header class="admin-header">
+
+            <div class="admin-header-left">
+
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                    aria-label="Toggle sidebar"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <h1>
+                        Products
+                    </h1>
+
+                    <p>
+                        Manage all products on the marketplace.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-header-right">
+
+                <div class="admin-profile">
+
+                    <div
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong id="adminName">
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ========================================
+             CONTENT
+        ======================================== -->
+
+        <section class="admin-content">
+
+
+            <!-- ========================================
+                 PAGE TOP
+            ======================================== -->
+
+            <div class="page-top">
+
+                <div>
+
+                    <h2>
+                        All Products
+                    </h2>
+
+                    <p>
+                        View and manage products added by vendors.
+                    </p>
+
+                </div>
+
+
+                <div class="product-summary">
+
+                    <span>
+                        Total Products
+                    </span>
+
+                    <strong id="totalProducts">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 MESSAGE
+            ======================================== -->
+
+            <div
+                id="productMessage"
+                class="product-message"
+            ></div>
+
+
+
+            <!-- ========================================
+                 SEARCH / FILTER
+            ======================================== -->
+
+            <section class="products-toolbar">
+
+                <div class="search-box">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="search"
+                        id="productSearch"
+                        placeholder="Search products, shops or vendors..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <label
+                        for="statusFilter"
+                        class="sr-only"
+                    >
+                        Filter by status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ========================================
+                 PRODUCTS TABLE
+            ======================================== -->
+
+            <section class="products-panel">
+
+                <div class="table-wrapper">
+
+                    <table class="products-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Product
+                                </th>
+
+                                <th>
+                                    Shop
+                                </th>
+
+                                <th>
+                                    Vendor
+                                </th>
+
+                                <th>
+                                    Price
+                                </th>
+
+                                <th>
+                                    Stock
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Created
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="productsTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="8"
+                                    class="table-loading"
+                                >
+                                    Loading products...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- ========================================
+                     EMPTY STATE
+                ======================================== -->
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                    style="display: none;"
+                >
+
+                    <div class="empty-icon">
+                        📦
+                    </div>
+
+                    <h3>
+                        No products found
+                    </h3>
+
+                    <p>
+                        Products added by vendors will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         PRODUCT DETAILS MODAL
+    ======================================== -->
+
+    <div
+        id="productModal"
+        class="modal-overlay"
+        style="display: none;"
+    >
+
+        <div class="product-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Product Details
+                    </h2>
+
+                    <p>
+                        Complete product information
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeProductModal"
+                    class="modal-close"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                id="productDetails"
+                class="product-details"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script src="./products.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Orders | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./orders.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         SIDEBAR
+    ======================================== -->
+
+    <aside class="admin-sidebar">
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                DM
+            </div>
+
+            <div>
+                <h2>Digital</h2>
+                <span>Marketplace</span>
+            </div>
+
+        </div>
+
+
+        <nav class="admin-navigation">
+
+            <a
+                href="./dashboard.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">◉</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="./vendors.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">👥</span>
+                <span>Vendors</span>
+            </a>
+
+
+            <a
+                href="./shops.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">🏪</span>
+                <span>Shops</span>
+            </a>
+
+
+            <a
+                href="./products.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">📦</span>
+                <span>Products</span>
+            </a>
+
+
+            <a
+                href="./orders.html"
+                class="admin-nav-item active"
+            >
+                <span class="nav-icon">🛒</span>
+                <span>Orders</span>
+            </a>
+
+
+            <a
+                href="./settings.html"
+                class="admin-nav-item"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="admin-sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- ========================================
+             HEADER
+        ======================================== -->
+
+        <header class="admin-header">
+
+            <div class="admin-header-left">
+
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                    aria-label="Toggle sidebar"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <h1>
+                        Orders
+                    </h1>
+
+                    <p>
+                        Manage customer orders on the marketplace.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-header-right">
+
+                <div class="admin-profile">
+
+                    <div
+                        class="admin-avatar"
+                        id="adminAvatar"
+                    >
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong id="adminName">
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ========================================
+             CONTENT
+        ======================================== -->
+
+        <section class="admin-content">
+
+
+            <!-- ========================================
+                 PAGE TOP
+            ======================================== -->
+
+            <div class="page-top">
+
+                <div>
+
+                    <h2>
+                        All Orders
+                    </h2>
+
+                    <p>
+                        View and manage orders placed by customers.
+                    </p>
+
+                </div>
+
+
+                <div class="order-summary">
+
+                    <span>
+                        Total Orders
+                    </span>
+
+                    <strong id="totalOrders">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 ORDER STATISTICS
+            ======================================== -->
+
+            <section class="order-stats">
+
+
+                <div class="order-stat-card">
+
+                    <div class="stat-icon pending">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="order-stat-card">
+
+                    <div class="stat-icon processing">
+                        🔄
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Processing
+                        </span>
+
+                        <strong id="processingOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="order-stat-card">
+
+                    <div class="stat-icon completed">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Completed
+                        </span>
+
+                        <strong id="completedOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="order-stat-card">
+
+                    <div class="stat-icon cancelled">
+                        ×
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Cancelled
+                        </span>
+
+                        <strong id="cancelledOrders">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ========================================
+                 MESSAGE
+            ======================================== -->
+
+            <div
+                id="orderMessage"
+                class="order-message"
+            ></div>
+
+
+
+            <!-- ========================================
+                 SEARCH / FILTER
+            ======================================== -->
+
+            <section class="orders-toolbar">
+
+                <div class="search-box">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="search"
+                        id="orderSearch"
+                        placeholder="Search orders, customers, shops or vendors..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <label
+                        for="orderStatusFilter"
+                        class="sr-only"
+                    >
+                        Filter by order status
+                    </label>
+
+                    <select id="orderStatusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="processing">
+                            Processing
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                        <option value="cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ========================================
+                 ORDERS TABLE
+            ======================================== -->
+
+            <section class="orders-panel">
+
+                <div class="table-wrapper">
+
+                    <table class="orders-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Order
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Shop
+                                </th>
+
+                                <th>
+                                    Vendor
+                                </th>
+
+                                <th>
+                                    Total
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    WhatsApp
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="ordersTableBody">
+
+                            <tr>
+
+                                <td
+                                    colspan="9"
+                                    class="table-loading"
+                                >
+                                    Loading orders...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <!-- ========================================
+                     EMPTY STATE
+                ======================================== -->
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                    style="display: none;"
+                >
+
+                    <div class="empty-icon">
+                        🛒
+                    </div>
+
+                    <h3>
+                        No orders found
+                    </h3>
+
+                    <p>
+                        Customer orders will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         ORDER DETAILS MODAL
+    ======================================== -->
+
+    <div
+        id="orderModal"
+        class="modal-overlay"
+        style="display: none;"
+    >
+
+        <div class="order-modal">
+
+
+            <!-- ========================================
+                 MODAL HEADER
+            ======================================== -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Order Details
+                    </h2>
+
+                    <p>
+                        Complete order information
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeOrderModal"
+                    class="modal-close"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 ORDER DETAILS
+            ======================================== -->
+
+            <div
+                id="orderDetails"
+                class="order-details"
+            ></div>
+
+
+
+            <!-- ========================================
+                 ORDER ITEMS
+            ======================================== -->
+
+            <div class="order-items-section">
+
+                <div class="section-title">
+
+                    <h3>
+                        Order Items
+                    </h3>
+
+                </div>
+
+
+                <div
+                    id="orderItems"
+                    class="order-items"
+                ></div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 STATUS UPDATE
+            ======================================== -->
+
+            <div class="order-status-section">
+
+                <label
+                    for="modalOrderStatus"
+                >
+                    Update Order Status
+                </label>
+
+
+                <div class="status-update-row">
+
+                    <select
+                        id="modalOrderStatus"
+                    >
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="processing">
+                            Processing
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                        <option value="cancelled">
+                            Cancelled
+                        </option>
+
+                    </select>
+
+
+                    <button
+                        type="button"
+                        id="updateOrderStatusButton"
+                        class="update-status-button"
+                    >
+                        Update Status
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script src="./orders.js"></script>
+
+</body>
+
+</html>

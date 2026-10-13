@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Shop Profile</title>
+
+    <link
+        rel="stylesheet"
+        href="./shop-profile.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         SIDEBAR
+    ======================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <h2>
+                Vendor Panel
+            </h2>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="./dashboard.html">
+                Dashboard
+            </a>
+
+
+            <a href="./products.html">
+                Products
+            </a>
+
+
+            <a href="./orders.html">
+                Orders
+            </a>
+
+
+            <a
+                href="./shop-profile.html"
+                class="active"
+            >
+                Shop Profile
+            </a>
+
+        </nav>
+
+
+        <button
+            type="button"
+            id="logoutButton"
+        >
+            Logout
+        </button>
+
+    </aside>
+
+
+
+    <!-- ========================================
+         MAIN CONTENT
+    ======================================== -->
+
+    <main class="main-content">
+
+
+        <!-- ========================================
+             HEADER
+        ======================================== -->
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>
+                    Shop Profile
+                </h1>
+
+                <p>
+                    Manage your shop information
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="sidebarToggle"
+            >
+                ☰
+            </button>
+
+        </header>
+
+
+
+        <!-- ========================================
+             MESSAGE
+        ======================================== -->
+
+        <div
+            id="shopMessage"
+            class="shop-message"
+        ></div>
+
+
+
+        <!-- ========================================
+             SHOP PROFILE CARD
+        ======================================== -->
+
+        <section class="shop-profile-card">
+
+
+            <!-- ========================================
+                 CARD HEADER
+            ======================================== -->
+
+            <div class="shop-profile-header">
+
+                <div>
+
+                    <h2>
+                        Shop Information
+                    </h2>
+
+                    <p>
+                        Create and manage the information
+                        customers see about your shop.
+                    </p>
+
+                </div>
+
+
+                <!-- SHOP STATUS -->
+
+                <span
+                    id="shopStatus"
+                    class="shop-status"
+                >
+                    Not Created
+                </span>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 NO SHOP MESSAGE
+            ======================================== -->
+
+            <div
+                id="noShopMessage"
+                class="no-shop-message"
+                style="display: none;"
+            >
+
+                <div class="no-shop-icon">
+                    🏪
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        You don't have a shop yet
+                    </h3>
+
+                    <p>
+                        Create your shop before adding
+                        products to the marketplace.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ========================================
+                 SHOP PROFILE FORM
+            ======================================== -->
+
+            <form
+                id="shopProfileForm"
+                novalidate
+            >
+
+
+                <!-- ========================================
+                     SHOP NAME
+                ======================================== -->
+
+                <div class="form-group">
+
+                    <label for="shopName">
+                        Shop Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="shopName"
+                        name="name"
+                        placeholder="Enter shop name"
+                        autocomplete="organization"
+                        maxlength="150"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- ========================================
+                     CATEGORY
+                ======================================== -->
+
+                <div class="form-group">
+
+                    <label for="shopCategory">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="shopCategory"
+                        name="category"
+                        placeholder="e.g. Fashion, Electronics, Food"
+                        maxlength="100"
+                    >
+
+                </div>
+
+
+
+                <!-- ========================================
+                     WHATSAPP NUMBER
+                ======================================== -->
+
+                <div class="form-group">
+
+                    <label for="whatsappNumber">
+                        WhatsApp Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="whatsappNumber"
+                        name="whatsapp_number"
+                        placeholder="Enter WhatsApp number"
+                        autocomplete="tel"
+                        maxlength="20"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- ========================================
+                     DESCRIPTION
+                ======================================== -->
+
+                <div class="form-group">
+
+                    <label for="shopDescription">
+                        Shop Description
+                    </label>
+
+                    <textarea
+                        id="shopDescription"
+                        name="description"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Tell customers about your shop..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- ========================================
+                     SHOP LOGO
+                ======================================== -->
+
+                <div class="form-group">
+
+                    <label for="shopLogo">
+                        Shop Logo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="shopLogo"
+                        name="logo"
+                        placeholder="Enter logo URL (optional)"
+                    >
+
+                    <small>
+                        Logo URL is optional.
+                    </small>
+
+                </div>
+
+
+
+                <!-- ========================================
+                     SHOP LOGO PREVIEW
+                ======================================== -->
+
+                <div
+                    id="shopLogoPreviewContainer"
+                    class="shop-logo-preview-container"
+                    style="display: none;"
+                >
+
+                    <img
+                        id="shopLogoPreview"
+                        src=""
+                        alt="Shop Logo"
+                        class="shop-logo-preview"
+                    >
+
+                </div>
+
+
+
+                <!-- ========================================
+                     ACTIONS
+                ======================================== -->
+
+                <div class="form-actions">
+
+
+                    <!-- CREATE / SAVE -->
+
+                    <button
+                        type="submit"
+                        id="saveShopButton"
+                    >
+                        Create Shop
+                    </button>
+
+
+
+                    <!-- CANCEL EDIT -->
+
+                    <button
+                        type="button"
+                        id="cancelEditButton"
+                        style="display: none;"
+                    >
+                        Cancel
+                    </button>
+
+
+                </div>
+
+            </form>
+
+
+
+            <!-- ========================================
+                 SHOP DETAILS
+            ======================================== -->
+
+            <div
+                id="shopDetails"
+                class="shop-details"
+                style="display: none;"
+            >
+
+
+                <div class="shop-details-header">
+
+                    <h2>
+                        Your Shop
+                    </h2>
+
+                    <p>
+                        Shop information currently visible
+                        on the marketplace.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SHOP NAME -->
+
+                <div class="shop-detail-row">
+
+                    <span>
+                        Shop Name
+                    </span>
+
+                    <strong id="displayShopName">
+                        N/A
+                    </strong>
+
+                </div>
+
+
+
+                <!-- CATEGORY -->
+
+                <div class="shop-detail-row">
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong id="displayShopCategory">
+                        N/A
+                    </strong>
+
+                </div>
+
+
+
+                <!-- WHATSAPP -->
+
+                <div class="shop-detail-row">
+
+                    <span>
+                        WhatsApp
+                    </span>
+
+                    <strong id="displayShopWhatsapp">
+                        N/A
+                    </strong>
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="shop-detail-row">
+
+                    <span>
+                        Description
+                    </span>
+
+                    <strong id="displayShopDescription">
+                        N/A
+                    </strong>
+
+                </div>
+
+
+
+                <!-- CREATED -->
+
+                <div class="shop-detail-row">
+
+                    <span>
+                        Created
+                    </span>
+
+                    <strong id="displayShopCreated">
+                        N/A
+                    </strong>
+
+                </div>
+
+
+
+                <!-- ========================================
+                     SHOP ACTIONS
+                ======================================== -->
+
+                <div class="shop-detail-actions">
+
+
+                    <!-- EDIT SHOP -->
+
+                    <button
+                        type="button"
+                        id="editShopButton"
+                    >
+                        Edit Shop
+                    </button>
+
+
+
+                    <!-- ADD PRODUCT -->
+
+                    <a
+                        href="./products.html"
+                        id="addProductButton"
+                    >
+                        + Add Product
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script src="./shop-profile.js"></script>
+
+</body>
+
+</html>
+

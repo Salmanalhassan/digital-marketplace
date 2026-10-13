@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout - Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/checkout.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="checkout-header">
+
+        <a
+            href="./cart.html"
+            class="back-link"
+        >
+            ← Back to Cart
+        </a>
+
+        <h1>Checkout</h1>
+
+        <div></div>
+
+    </header>
+
+
+    <main class="checkout-container">
+
+        <section class="customer-section">
+
+            <div class="section-heading">
+
+                <span class="step-number">
+                    1
+                </span>
+
+                <div>
+                    <h2>Your Details</h2>
+
+                    <p>
+                        Enter your details so the shop
+                        can contact you about your order.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="checkoutForm">
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                    <small
+                        id="nameError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        name="phone"
+                        placeholder="08012345678"
+                        required
+                    >
+
+                    <small
+                        id="phoneError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerAddress">
+                        Delivery Address
+                    </label>
+
+                    <textarea
+                        id="customerAddress"
+                        name="address"
+                        rows="4"
+                        placeholder="Enter your delivery address"
+                        required
+                    ></textarea>
+
+                    <small
+                        id="addressError"
+                        class="error"
+                    ></small>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="order-btn"
+                >
+                    Order via WhatsApp
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <aside class="order-summary">
+
+            <div class="section-heading">
+
+                <span class="step-number">
+                    2
+                </span>
+
+                <div>
+                    <h2>Your Order</h2>
+
+                    <p id="shopName">
+                        Shop
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="checkoutItems">
+            </div>
+
+
+            <div class="summary-divider"></div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="checkoutTotal">
+                    ₦0
+                </strong>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <script src="./js/cart.js"></script>
+
+    <script src="./js/checkout.js"></script>
+
+</body>
+
+</html>

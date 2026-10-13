@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Add Product | Digital Marketplace</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/vendor.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="vendor-sidebar">
+
+        <div class="vendor-brand">
+
+            <div class="vendor-brand-icon">
+                DM
+            </div>
+
+            <div>
+
+                <h2>Digital</h2>
+
+                <span>
+                    Marketplace
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="vendor-navigation">
+
+
+            <a
+                href="./dashboard.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="./orders.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    🛒
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+            </a>
+
+
+            <a
+                href="./products.html"
+                class="vendor-nav-item active"
+            >
+
+                <span class="nav-icon">
+                    📦
+                </span>
+
+                <span>
+                    My Products
+                </span>
+
+            </a>
+
+
+            <a
+                href="./profile.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    🏪
+                </span>
+
+                <span>
+                    Shop Profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="./settings.html"
+                class="vendor-nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="vendor-sidebar-bottom">
+
+            <button
+                type="button"
+                id="logoutButton"
+                class="logout-button"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="vendor-main">
+
+
+        <!-- HEADER -->
+
+        <header class="vendor-header">
+
+            <div class="vendor-header-left">
+
+                <button
+                    type="button"
+                    id="sidebarToggle"
+                    class="sidebar-toggle"
+                    aria-label="Toggle sidebar"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <h1>
+                        Add Product
+                    </h1>
+
+                    <p>
+                        Add a new product to your shop.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="vendor-header-right">
+
+                <div class="vendor-shop-info">
+
+                    <div
+                        class="vendor-avatar"
+                        id="vendorAvatar"
+                    >
+                        V
+                    </div>
+
+                    <div>
+
+                        <strong id="vendorName">
+                            Vendor
+                        </strong>
+
+                        <span id="vendorShopName">
+                            My Shop
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+
+        <section class="vendor-content">
+
+
+            <div class="add-product-page-top">
+
+                <div>
+
+                    <h2>
+                        Create New Product
+                    </h2>
+
+                    <p>
+                        Enter your product information below.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="./products.html"
+                    class="back-products-button"
+                >
+                    ← Back to Products
+                </a>
+
+            </div>
+
+
+
+            <!-- =========================
+                 MESSAGE
+            ========================== -->
+
+            <div
+                id="productMessage"
+                class="product-message"
+            ></div>
+
+
+
+            <!-- =========================
+                 FORM PANEL
+            ========================== -->
+
+            <section class="dashboard-panel add-product-panel">
+
+
+                <form
+                    id="addProductForm"
+                    novalidate
+                >
+
+
+                    <!-- PRODUCT INFORMATION -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <h3>
+                                Product Information
+                            </h3>
+
+                            <p>
+                                Basic information about your product.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- PRODUCT NAME -->
+
+                            <div class="form-group full-width">
+
+                                <label
+                                    for="productName"
+                                >
+                                    Product Name
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="productName"
+                                    name="name"
+                                    placeholder="e.g. Premium Ankara Dress"
+                                    maxlength="150"
+                                    autocomplete="off"
+                                >
+
+                                <small
+                                    id="nameError"
+                                    class="form-error"
+                                ></small>
+
+                            </div>
+
+
+
+                            <!-- DESCRIPTION -->
+
+                            <div class="form-group full-width">
+
+                                <label
+                                    for="productDescription"
+                                >
+                                    Description
+                                </label>
+
+                                <textarea
+                                    id="productDescription"
+                                    name="description"
+                                    rows="5"
+                                    placeholder="Describe your product..."
+                                ></textarea>
+
+                                <small
+                                    id="descriptionError"
+                                    class="form-error"
+                                ></small>
+
+                            </div>
+
+
+
+                            <!-- CATEGORY -->
+
+                            <div class="form-group">
+
+                                <label
+                                    for="productCategory"
+                                >
+                                    Category
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="productCategory"
+                                    name="category"
+                                    placeholder="e.g. Fashion"
+                                    maxlength="100"
+                                >
+
+                                <small
+                                    id="categoryError"
+                                    class="form-error"
+                                ></small>
+
+                            </div>
+
+
+
+                            <!-- PRICE -->
+
+                            <div class="form-group">
+
+                                <label
+                                    for="productPrice"
+                                >
+                                    Price (₦)
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="productPrice"
+                                    name="price"
+                                    placeholder="30000"
+                                    min="0"
+                                    step="0.01"
+                                >
+
+                                <small
+                                    id="priceError"
+                                    class="form-error"
+                                ></small>
+
+                            </div>
+
+
+
+                            <!-- STOCK -->
+
+                            <div class="form-group">
+
+                                <label
+                                    for="productStock"
+                                >
+                                    Stock Quantity
+                                    <span>*</span>
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="productStock"
+                                    name="stock"
+                                    placeholder="10"
+                                    min="0"
+                                    step="1"
+                                >
+
+                                <small
+                                    id="stockError"
+                                    class="form-error"
+                                ></small>
+
+                            </div>
+
+
+
+                            <!-- STATUS -->
+
+                            <div class="form-group">
+
+                                <label
+                                    for="productStatus"
+                                >
+                                    Status
+                                </label>
+
+                                <select
+                                    id="productStatus"
+                                    name="status"
+                                >
+
+                                    <option value="active">
+                                        Active
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                                <small
+                                    id="statusError"
+                                    class="form-error"
+                                ></small>
+
+                            </div>
+
+<div class="form-group full-width">
+
+    <label
+        for="productImage"
+    >
+        Product Image
+    </label>
+
+    <input
+        type="file"
+        id="productImage"
+        name="image"
+        accept="image/png, image/jpeg, image/webp"
+    >
+
+    <small class="form-help">
+        Upload a product image. JPG, PNG or WebP.
+    </small>
+
+    <small
+        id="imageError"
+        class="form-error"
+    ></small>
+
+    <div
+        id="imagePreview"
+        class="product-image-preview"
+        style="display: none;"
+    >
+
+        <img
+            id="imagePreviewImage"
+            src=""
+            alt="Product image preview"
+        >
+
+    </div>
+
+</div>
+
+                            <!-- IMAGE URL -->
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         ACTIONS
+                    ========================== -->
+
+                    <div class="form-actions">
+
+                        <a
+                            href="./products.html"
+                            class="cancel-product-button"
+                        >
+                            Cancel
+                        </a>
+
+
+                        <button
+                            type="submit"
+                            id="saveProductButton"
+                            class="save-product-button"
+                        >
+
+                            Save Product
+
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="../js/vendor-add-product.js"></script>
+
+</body>
+
+</html>
