@@ -3,7 +3,7 @@
 // ========================================
 
 const API_BASE_URL =
-    "http://172.20.10.5:5000/api";
+    "https://digital-marketplace-rikz.onrender.com/api";
 
 
 // ========================================
@@ -178,12 +178,12 @@ function getProductImageUrl(image) {
         imageValue.startsWith("/uploads/")
     ) {
 
-        return `http://172.20.10.5:5000${imageValue}`;
+        return `https://digital-marketplace-rikz.onrender.com${imageValue}`;
 
     }
 
 
-    return `http://172.20.10.5:5000/uploads/products/${imageValue}`;
+    return `https://digital-marketplace-rikz.onrender.com/uploads/products/${imageValue}`;
 
 }
 

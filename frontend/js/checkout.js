@@ -441,7 +441,7 @@ if (invalidItem) {
 
         const response =
             await fetch(
-                "http://172.20.10.5:5000/api/orders",
+                "https://digital-marketplace-rikz.onrender.com/api/orders",
                 {
                     method: "POST",
 

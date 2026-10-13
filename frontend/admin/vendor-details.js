@@ -8,7 +8,7 @@
 // API BASE URL
 // ========================================
 
-const API_BASE_URL = "http://172.20.10.5:5000/api";
+const API_BASE_URL = "https://digital-marketplace-rikz.onrender.com/api";
 
 
 // ========================================
@@ -671,7 +671,7 @@ function renderShops(shops) {
             const logoUrl =
                 shop.logo.startsWith("http")
                     ? shop.logo
-                    : `http://172.20.10.5:5000/${String(
+                    : `https://digital-marketplace-rikz.onrender.com/${String(
                         shop.logo
                     ).replace(/^\/+/, "")}`;
 
